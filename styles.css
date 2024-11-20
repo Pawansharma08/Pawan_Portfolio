@@ -29,6 +29,21 @@ header {
     transition: color 0.3s ease;
 }
 
+/* Add this to your CSS */
+/* Default for mobile phones */
+section {
+    scroll-margin-top: 300px; /* Value for mobile phones */
+}
+
+/* For laptops and larger screens */
+@media (min-width: 1024px) {
+    section {
+        scroll-margin-top: 100px; /* Value for laptops */
+    }
+}
+
+
+
 .navbar a:hover {
     color: #f8d7da; /* Soft red for hover */
 }
