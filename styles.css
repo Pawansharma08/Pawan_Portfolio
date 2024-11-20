@@ -1,0 +1,374 @@
+/* General Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(to right, #1a1a1d, #2e2e30); /* Dark gradient */
+    color: #fff; /* Global text color set to white */
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header Styles */
+header {
+    background: rgba(17, 17, 17, 0.8); /* Semi-transparent background */
+    border-bottom: 2px solid #dc3545;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px); /* Frosted glass effect */
+}
+
+.navbar {
+    border-bottom: 2px solid #dc3545;
+    padding: 10px 0;
+}
+
+.navbar a {
+    color: #fff !important; /* Ensures white text for nav links */
+    text-transform: uppercase; /* Adds emphasis on navbar links */
+    font-weight: bold;
+    padding: 10px 20px;
+    transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+    color: #f8d7da; /* Soft red for hover */
+}
+
+/* Container to center the image */
+.image-container {
+    text-align: center; /* Center the image in the container */
+    margin: 20px 0; /* Add space around the image section */
+}
+
+/* Simple and elegant image style */
+.styled-image {
+    border-radius: 10px; /* Add slightly rounded corners */
+    border: 3px solid #000; /* Black border */
+    width: 150px; /* Set consistent width */
+    height: 150px; /* Set consistent height */
+    object-fit: cover; /* Ensure the image fits perfectly */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Subtle shadow for depth */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effects */
+}
+
+/* Hover effect to enhance the image */
+.styled-image:hover {
+    transform: scale(1.05); /* Slight zoom effect */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.7); /* Increase shadow intensity */
+    cursor: pointer; /* Change cursor to pointer */
+}
+
+
+/* Card Styles with Glassmorphism */
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 10px;
+    color: #fff;
+    background: rgba(255, 255, 255, 0.1); /* Semi-transparent white */
+    backdrop-filter: blur(10px); /* Frosted glass effect */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    border: 2px solid rgba(220, 53, 69, 0.6); /* Red border with transparency */
+}
+
+.text-summary {
+    font-size: 36px; /* Larger text size for emphasis */
+    font-weight: 700; /* Bold text */
+    color: transparent;
+    background: linear-gradient(to right, #ff7f50, #1e90ff); /* Gradient color from Coral to Dodger Blue */
+    -webkit-background-clip: text; /* Clip the background to text */
+    background-clip: text;
+    text-align: center; /* Center align the text */
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow to make it pop */
+    letter-spacing: 2px; /* Slightly increase letter spacing for a modern look */
+    animation: fadeInUp 1s ease-out; /* Animation to fade and slide in */
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.text-experience {
+    font-size: 40px; /* Larger size for emphasis */
+    font-weight: 700; /* Bold text */
+    color: transparent;
+    background: linear-gradient(to left, #ff6a00, #ee0979); /* Gradient from Orange to Hot Pink */
+    -webkit-background-clip: text; /* Clip the background to text */
+    background-clip: text;
+    text-align: center; /* Center the text */
+    text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.3); /* Darker shadow for better contrast */
+    letter-spacing: 3px; /* Increase letter spacing for a clean and modern look */
+    animation: fadeInUp 1s ease-out; /* Animation to fade and slide in */
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.text-photo-gallery {
+    font-size: 42px; /* Larger size for emphasis */
+    font-weight: 700; /* Bold text */
+    color: transparent;
+    background: linear-gradient(to right, #00bcd4, #ff9800); /* Gradient from Blue to Orange */
+    -webkit-background-clip: text; /* Clip the background to text */
+    background-clip: text;
+    text-align: center; /* Center the text */
+    text-shadow: 4px 4px 12px rgba(0, 0, 0, 0.5); /* Darker shadow for better contrast */
+    letter-spacing: 2px; /* Add some spacing between the letters */
+    animation: slideInUp 1s ease-out; /* Animation for smooth entry */
+}
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.text-projects {
+    font-size: 48px; /* Large font size for visibility */
+    font-weight: 700; /* Bold font weight for prominence */
+    color: transparent; /* Ensures the gradient is applied */
+    background: linear-gradient(to right, #4facfe, #00f2fe); /* Cool gradient from blue to light cyan */
+    -webkit-background-clip: text; /* Clips the background to the text */
+    background-clip: text;
+    text-align: center; /* Center-align the text */
+    letter-spacing: 4px; /* Spaced-out letters for a modern feel */
+    text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.4); /* Deep shadow for more contrast */
+    animation: fadeInFromTop 1s ease-out; /* Fade-in animation with a slide from top */
+}
+
+/* Keyframes for the fade-in effect */
+@keyframes fadeInFromTop {
+    0% {
+        transform: translateY(-20px); /* Start above */
+        opacity: 0; /* Start invisible */
+    }
+    100% {
+        transform: translateY(0); /* End at normal position */
+        opacity: 1; /* Fully visible */
+    }
+}
+
+/* Beautiful Skills Heading */
+.text-skills {
+    font-size: 50px; /* Large font size for visibility */
+    font-family: 'Poppins', sans-serif; /* Modern, clean font */
+    font-weight: 700; /* Bold text for prominence */
+    color: transparent; /* Ensures the gradient is applied */
+    background: linear-gradient(to right, #ff7e5f, #feb47b); /* Gradient from pink to orange */
+    -webkit-background-clip: text; /* Clips the background to the text */
+    background-clip: text;
+    text-align: center; /* Center-align the text */
+    letter-spacing: 5px; /* Spaced-out letters for a modern feel */
+    text-shadow: 4px 4px 12px rgba(0, 0, 0, 0.5); /* Strong shadow for better contrast */
+    animation: fadeInUp 1.5s ease-out; /* Smooth fade-in and slide-up animation */
+}
+
+/* Keyframes for fade-in and slide-up animation */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px); /* Start below */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* End at normal position */
+    }
+}
+
+
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(220, 53, 69, 0.8);
+}
+
+.card-title,
+.card-subtitle,
+.card-body,
+.card ul {
+    color: #fff; /* White text for all card content */
+}
+
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 2px solid #dc3545;
+    border-radius: 10px 10px 0 0; /* Rounded corners on top */
+}
+
+/* Section Headings */
+h2 {
+    color: #fff;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Footer Styles */
+footer {
+    color: #fff;
+    background: rgba(17, 17, 17, 0.8); /* Semi-transparent footer */
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px); /* Frosted glass effect */
+}
+
+/* Links */
+a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    color: #f8d7da; /* Soft red for hover */
+    text-decoration: underline;
+}
+
+/* Smooth Scroll Animation */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Button Styles */
+button {
+    background-color: #dc3545;
+    border: none;
+    padding: 12px 30px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+    background-color: #c82333;
+    transform: translateY(-3px);
+}
+
+/* Skill Section with Glassmorphism */
+#skills {
+    background: linear-gradient(to right, #1a1a1a, #4e4e4e); /* Dark gradient */
+    color: #fff; /* Ensure text is visible */
+    padding: 50px 0; /* Adjust padding for spacing */
+}
+
+
+/* Skill Items - Glassmorphism & Animation */
+#skills .skill-item {
+    background: rgba(255, 255, 255, 0.1); /* Semi-transparent white */
+    border-radius: 8px;
+    padding: 30px;
+    transition: transform 0.5s ease, box-shadow 0.5s ease, background-color 0.3s ease;
+    margin: 10px;
+    backdrop-filter: blur(10px); /* Frosted glass effect */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: fit-content; /* Fixed height for uniformity */
+}
+
+#skills .skill-item:hover {
+    transform: translateY(-15px); /* Hover lift effect */
+    box-shadow: 0px 12px 20px rgba(0, 0, 0, 0.4);
+    background-color: rgba(255, 255, 255, 0.15); /* Lighter background on hover */
+}
+
+/* Skill Icons */
+#skills .skill-item i {
+    color: #dc3545;
+    font-size: 3.5rem;
+    margin-bottom: 15px;
+    transition: color 0.3s ease;
+}
+
+#skills .skill-item:hover i {
+    color: #fff; /* Change icon color on hover */
+}
+
+/* Skill Text */
+#skills .skill-item p {
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+#skills .skill-item:hover p {
+    transform: translateY(-5px); /* Lift text on hover */
+    color: #f8d7da; /* Soft red color on hover */
+}
+
+/* Card Image and Content Responsiveness */
+@media (max-width: 768px) {
+    .card-img-top {
+        height: 150px;
+    }
+
+    .navbar a {
+        padding: 8px 16px;
+    }
+
+    #skills .skill-item {
+        padding: 20px;
+    }
+
+    #skills .skill-item i {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .navbar-nav {
+        flex-direction: column;
+    }
+    .skill-item {
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+}
+
+
+.card:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    text-decoration: underline;
+}
+
+
+.fade-in {
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
