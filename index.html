@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4.4.0/dist/email.min.js"></script>
+
     <!-- Add Bootstrap 5 CSS in the <head> -->
 
 </head>
@@ -273,6 +275,43 @@
     </div>
 </section>
 
+<section id="contact" class="mb-5 animate__animated animate__fadeInUp">
+    <h2 class="text-uppercase border-bottom border-danger pb-2 mb-4">Contact Me</h2>
+    <div class="row">
+        <!-- Left Column (Form) -->
+        <div class="col-md-6">
+            <form id="contact-form">
+                <div class="mb-3">
+                    <label for="name" class="form-label">Your Name</label>
+                    <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name" required>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Your Email</label>
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" required>
+                </div>
+                <div class="mb-3">
+                    <label for="message" class="form-label">Your Message</label>
+                    <textarea class="form-control" id="message" name="message" rows="5" placeholder="Write your message here" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-danger w-100">Send Message</button>
+            </form>
+        </div>
+        <!-- Right Column (Image or Illustration) -->
+        <div class="col-md-6 d-flex justify-content-center align-items-center">
+            <img src="your-image-path.jpg" alt="Contact Me" class="img-fluid rounded shadow">
+        </div>
+    </div>
+</section>
+
+        
+        <!-- Right Column (Image) -->
+        <div class="col-md-6">
+            <img src="path-to-your-image.jpg" alt="Contact Image" class="img-fluid">
+        </div>
+    </div>
+</section>
+
+
 
 
 
@@ -285,27 +324,61 @@
 </footer>
 
 
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 
-    <script>
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
+<script>
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
             });
         });
+    });
 
-        // Close the navbar collapse when a nav-link is clicked
-        document.querySelectorAll('.nav-link').forEach(item => {
-            item.addEventListener('click', () => {
-                const navbarCollapse = document.querySelector('.navbar-collapse');
-                if (navbarCollapse.classList.contains('show')) {
-                    new bootstrap.Collapse(navbarCollapse).toggle();
-                }
-            });
-        });        
-    </script>
+    // Close the navbar collapse when a nav-link is clicked
+    document.querySelectorAll('.nav-link').forEach(item => {
+        item.addEventListener('click', () => {
+            const navbarCollapse = document.querySelector('.navbar-collapse');
+            if (navbarCollapse.classList.contains('show')) {
+                new bootstrap.Collapse(navbarCollapse).toggle();
+            }
+        });
+    });
+
+    emailjs.init("jEfXg01TU_qGC60qX");
+
+
+document.addEventListener("DOMContentLoaded", function () {
+  document.getElementById("contact-form").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const message = document.getElementById("message").value;
+
+    const templateParams = {
+      from_name: name,
+      from_email: email,
+      message: message,
+    };
+
+    emailjs.send('service_kr0m9ku', 'template_umr9j21', templateParams)
+      .then(function(response) {
+        console.log('SUCCESS!', response.status, response.text);
+        alert("Your message has been sent successfully!");
+        document.getElementById("contact-form").reset();
+      })
+      .catch(function(error) {
+        console.error('FAILED...', error);
+        alert("Failed to send message. Please try again.");
+      });
+  });
+});
+</script>
+
+</script>
+
 </body>
 </html>
