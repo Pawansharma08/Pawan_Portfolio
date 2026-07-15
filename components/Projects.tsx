@@ -27,18 +27,25 @@ const projects = [
   },
   {
     id: 4,
-    title: "GIETU Official",
-    description: "A massive university-scale orchestration system. Features real-time academic telemetry, dynamic assessment kernels, and intuitive administrative nodes.",
-    image: "/images/gietu_official.png",
-    tags: ["Kotlin Architecture", "2.4k+ active"],
-    link: "https://play.google.com/store/apps/details?id=com.gietuofficialapp.gietuofficial"
+    title: "MIFTAH AI",
+    description: "A premium travel and lifestyle Android application. Features custom hotel/restaurant booking dashboards, lifestyle event grids, and a personalized AI travel assistant for customized trip recommendations.",
+    image: "/images/miftah.png",
+    tags: ["Kotlin & Compose", "Travel Assistant"]
   },
   {
     id: 5,
-    title: "AI Friend Forever",
-    description: "Synthesizing human interaction through recursive neural feedback. Implements advanced role-modeling and sentiment extraction kernels for unprecedented conversational depth.",
-    image: "/images/Aff.jpg",
-    tags: ["Generative Engine", "Neural Context"]
+    title: "Transit",
+    description: "Rider and Driver mobile app suite featuring real-time driver tracking, animated map navigation markers via Google Maps API, and low-latency ride status syncing using WebSockets.",
+    image: "/images/transit.png",
+    tags: ["Flutter & Maps", "WebSockets"]
+  },
+  {
+    id: 6,
+    title: "GIETU Official",
+    description: "A massive university-scale orchestration system. Features real-time academic telemetry, student attendance widgets, assessment indicators, and campus news streams.",
+    image: "/images/gietu_official.png",
+    tags: ["Kotlin Architecture", "2.4k+ active"],
+    link: "https://play.google.com/store/apps/details?id=com.gietuofficialapp.gietuofficial"
   }
 ];
 
