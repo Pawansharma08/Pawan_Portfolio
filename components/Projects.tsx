@@ -9,7 +9,7 @@ const projects = [
     description: "An AI training platform for companies. It automatically turns business documents into interactive lessons and uses an AI voice tutor to run realistic practice conversations with employees, helping HR teams onboard and train staff faster.",
     image: "/images/lexsyra.png",
     tags: ["AI Voice Tutor", "Upskilling Telemetry"],
-    link: "https://www.lexsyra.com/"
+    link: "https://lexsyra.com/"
   },
   {
     id: 2,
@@ -30,7 +30,8 @@ const projects = [
     title: "MIFTAH AI",
     description: "A premium travel and lifestyle Android application. Features custom hotel/restaurant booking dashboards, lifestyle event grids, and a personalized AI travel assistant for customized trip recommendations.",
     image: "/images/miftah.png",
-    tags: ["Kotlin & Compose", "Travel Assistant"]
+    tags: ["Kotlin & Compose", "Travel Assistant"],
+    link: "https://miftah.ai/"
   },
   {
     id: 5,
@@ -58,73 +59,84 @@ export default function Projects() {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-        {projects.map((project, index) => (
-          <motion.div
-            key={project.id}
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: index * 0.1 }}
-            className="group relative rounded-3xl overflow-hidden glass border border-white/10 hover:border-primary/30 transition-all duration-500"
-          >
-            <div className="aspect-video overflow-hidden">
-              <img
-                src={project.image}
-                alt={project.title}
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-              />
-            </div>
+        {projects.map((project, index) => {
+          const CardContainer = project.link ? motion.a : motion.div;
+          const containerProps = project.link
+            ? {
+                href: project.link,
+                target: "_blank",
+                rel: "noopener noreferrer",
+                className: "group relative rounded-3xl overflow-hidden glass border border-white/10 hover:border-primary/30 transition-all duration-500 cursor-pointer block"
+              }
+            : {
+                className: "group relative rounded-3xl overflow-hidden glass border border-white/10 hover:border-primary/30 transition-all duration-500"
+              };
 
-            <div className="p-8 space-y-6">
-              <div className="flex flex-wrap gap-3">
-                {project.tags.map((tag, tagIndex) => (
-                  <span
-                    key={tagIndex}
-                    className={`px-4 py-1.5 glass rounded-full text-[10px] font-black uppercase tracking-widest ${
-                      tag.includes('active') ? 'text-primary' :
-                      tag.includes('Neural') ? 'text-secondary' :
-                      tag.includes('Telemetry') ? 'text-tertiary' :
-                      'border border-white/10'
-                    }`}
-                  >
-                    {tag}
-                  </span>
-                ))}
+          return (
+            <CardContainer
+              key={project.id}
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              {...containerProps}
+            >
+              <div className="aspect-video overflow-hidden">
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                />
               </div>
 
-              <h4 className="text-3xl font-black tracking-tighter">{project.title}</h4>
-              <p className="text-slate-400 leading-relaxed font-medium">
-                {project.description}
-              </p>
+              <div className="p-8 space-y-6">
+                <div className="flex flex-wrap gap-3">
+                  {project.tags.map((tag, tagIndex) => (
+                    <span
+                      key={tagIndex}
+                      className={`px-4 py-1.5 glass rounded-full text-[10px] font-black uppercase tracking-widest ${
+                        tag.includes('active') ? 'text-primary' :
+                        tag.includes('Neural') ? 'text-secondary' :
+                        tag.includes('Telemetry') ? 'text-tertiary' :
+                        'border border-white/10'
+                      }`}
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
 
-              {project.link && (
-                <a
-                  href={project.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-4 text-xs font-black uppercase tracking-widest group/btn text-primary"
-                >
-                  Execute Deployment
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    className="group-hover/btn:translate-x-1 transition-transform"
+                <h4 className="text-3xl font-black tracking-tighter">{project.title}</h4>
+                <p className="text-slate-400 leading-relaxed font-medium">
+                  {project.description}
+                </p>
+
+                {project.link && (
+                  <div
+                    className="inline-flex items-center gap-4 text-xs font-black uppercase tracking-widest group/btn text-primary"
                   >
-                    <line x1="5" y1="12" x2="19" y2="12"></line>
-                    <polyline points="12 5 19 12 12 19"></polyline>
-                  </svg>
-                </a>
-              )}
-            </div>
-          </motion.div>
-        ))}
+                    Explore Sites
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      className="group-hover/btn:translate-x-1 transition-transform"
+                    >
+                      <line x1="5" y1="12" x2="19" y2="12"></line>
+                      <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                  </div>
+                )}
+              </div>
+            </CardContainer>
+          );
+        })}
       </div>
     </div>
   );

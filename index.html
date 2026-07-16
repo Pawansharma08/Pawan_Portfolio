@@ -30,7 +30,7 @@
                         primary: '#FF5C00',     /* Vibrant Orange */
                         secondary: '#FF7B00',   /* Secondary Accent */
                         tertiary: '#FF3D00',    /* Deep Orange-Red */
-                        zinc: { 950: '#08080a' }
+                        zinc: { 950: '#000000' }
                     },
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
@@ -116,7 +116,7 @@
                     </div>
                     
                     <div class="space-y-3">
-                        <h1 class="text-6xl md:text-8xl font-outfit font-black leading-none tracking-tighter">
+                        <h1 class="text-5xl sm:text-6xl md:text-8xl font-outfit font-black leading-none tracking-tighter">
                             Mr. Pawan <br>
                             <span class="text-gradient">Sharma</span>
                         </h1>
@@ -196,7 +196,7 @@
     </section>
 
     <!-- About Me / Life Struggle Story Section -->
-    <section id="about" class="py-24 relative z-10 bg-[#070709]">
+    <section id="about" class="py-16 md:py-24 relative z-10 bg-black">
         <div class="container mx-auto px-6">
             <div class="grid lg:grid-cols-12 gap-16 items-center">
                 <!-- Desk image with experience badge -->
@@ -206,7 +206,7 @@
                         <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                     </div>
                     <!-- Experience badge -->
-                    <div class="absolute -bottom-6 -left-6 bg-zinc-900 border border-primary/30 p-6 rounded-3xl shadow-3xl text-center z-20 flex items-center gap-4">
+                    <div class="absolute -bottom-6 left-1/2 -translate-x-1/2 md:left-auto md:-left-6 md:translate-x-0 bg-zinc-900 border border-primary/30 p-6 rounded-3xl shadow-3xl text-center z-20 flex items-center gap-4 whitespace-nowrap">
                         <span class="text-4xl font-outfit font-black text-primary">02</span>
                         <div class="text-left leading-tight">
                             <div class="text-xs font-black uppercase text-white tracking-wider">Years Of</div>
@@ -283,7 +283,7 @@
     </section>
 
     <!-- Our Services Section -->
-    <section id="services" class="py-24 relative z-10 bg-[#0a0a0d]">
+    <section id="services" class="py-16 md:py-24 relative z-10 bg-black">
         <div class="container mx-auto px-6">
             <div class="mb-16 text-center" data-aos="fade-up">
              <h2 class="text-[10px] font-black text-primary uppercase tracking-[0.4em] mb-4">
@@ -365,7 +365,7 @@
     </section>
 
     <!-- Main Container -->
-    <main class="container mx-auto px-6 py-20 space-y-24 relative z-10">
+    <main class="container mx-auto px-6 py-12 md:py-20 space-y-16 md:space-y-24 relative z-10">
 
         <!-- Career Timeline -->
         
@@ -422,7 +422,7 @@
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Project 1: Lexsyra -->
-                <div class="glass-card rounded-[2rem] overflow-hidden border border-white/5 flex flex-col h-full hover:-translate-y-2 transition-all duration-300 shadow-lg" data-aos="zoom-in">
+                <a href="https://lexsyra.com/" target="_blank" class="glass-card rounded-[2rem] overflow-hidden border border-white/5 flex flex-col h-full hover:-translate-y-2 transition-all duration-300 shadow-lg cursor-pointer block" data-aos="zoom-in">
                     <div class="w-full aspect-[4/3] overflow-hidden relative">
                         <img src="images/lexsyra.png" alt="Lexsyra" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105">
                         <div class="absolute inset-0 bg-gradient-to-t from-zinc-950/80 to-transparent"></div>
@@ -436,11 +436,11 @@
                         <p class="text-slate-400 text-xs leading-relaxed flex-grow">
                             An AI training platform for companies. It automatically turns business documents into interactive lessons and uses an AI voice tutor to run realistic practice conversations.
                         </p>
-                        <a href="https://www.lexsyra.com/" target="_blank" class="inline-flex items-center gap-2 text-[9px] font-black uppercase tracking-widest text-primary group/link">
-                            Execute Deployment <i data-lucide="arrow-up-right" class="w-3.5 h-3.5 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 transition-transform"></i>
-                        </a>
+                        <div class="inline-flex items-center gap-2 text-[9px] font-black uppercase tracking-widest text-primary group/link">
+                            Explore Sites <i data-lucide="arrow-up-right" class="w-3.5 h-3.5 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 transition-transform"></i>
+                        </div>
                     </div>
-                </div>
+                </a>
 
                 <!-- Project 2: Next Predict -->
                 <div class="glass-card rounded-[2rem] overflow-hidden border border-white/5 flex flex-col h-full hover:-translate-y-2 transition-all duration-300 shadow-lg" data-aos="zoom-in" data-aos-delay="100">
@@ -479,7 +479,7 @@
                 </div>
 
                 <!-- Project 4: MIFTAH AI -->
-                <div class="glass-card rounded-[2rem] overflow-hidden border border-white/5 flex flex-col h-full hover:-translate-y-2 transition-all duration-300 shadow-lg" data-aos="zoom-in">
+                <a href="https://miftah.ai/" target="_blank" class="glass-card rounded-[2rem] overflow-hidden border border-white/5 flex flex-col h-full hover:-translate-y-2 transition-all duration-300 shadow-lg cursor-pointer block" data-aos="zoom-in">
                     <div class="w-full aspect-[4/3] overflow-hidden relative">
                         <img src="images/miftah.png" alt="MIFTAH AI" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105">
                         <div class="absolute inset-0 bg-gradient-to-t from-zinc-950/80 to-transparent"></div>
@@ -493,8 +493,11 @@
                         <p class="text-slate-400 text-xs leading-relaxed flex-grow">
                             A premium travel and lifestyle Android application. Features custom hotel/restaurant booking dashboards, lifestyle event grids, and personalized AI travel recommendations.
                         </p>
+                        <div class="inline-flex items-center gap-2 text-[9px] font-black uppercase tracking-widest text-primary group/link">
+                            Explore Sites <i data-lucide="arrow-up-right" class="w-3.5 h-3.5 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 transition-transform"></i>
+                        </div>
                     </div>
-                </div>
+                </a>
 
                 <!-- Project 5: Transit -->
                 <div class="glass-card rounded-[2rem] overflow-hidden border border-white/5 flex flex-col h-full hover:-translate-y-2 transition-all duration-300 shadow-lg" data-aos="zoom-in" data-aos-delay="100">
@@ -515,7 +518,7 @@
                 </div>
 
                 <!-- Project 6: GIETU Official -->
-                <div class="glass-card rounded-[2rem] overflow-hidden border border-white/5 flex flex-col h-full hover:-translate-y-2 transition-all duration-300 shadow-lg" data-aos="zoom-in" data-aos-delay="200">
+                <a href="https://play.google.com/store/apps/details?id=com.gietuofficialapp.gietuofficial" target="_blank" class="glass-card rounded-[2rem] overflow-hidden border border-white/5 flex flex-col h-full hover:-translate-y-2 transition-all duration-300 shadow-lg cursor-pointer block" data-aos="zoom-in" data-aos-delay="200">
                     <div class="w-full aspect-[4/3] overflow-hidden relative">
                         <img src="images/gietu_official.png" alt="GIETU Official" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105">
                         <div class="absolute inset-0 bg-gradient-to-t from-zinc-950/80 to-transparent"></div>
@@ -529,11 +532,11 @@
                         <p class="text-slate-400 text-xs leading-relaxed flex-grow">
                             A massive university-scale orchestration system. Features real-time academic telemetry, student attendance widgets, assessment indicators, and campus news streams.
                         </p>
-                        <a href="https://play.google.com/store/apps/details?id=com.gietuofficialapp.gietuofficial" target="_blank" class="inline-flex items-center gap-2 text-[9px] font-black uppercase tracking-widest text-primary group/link">
-                            Execute Deployment <i data-lucide="arrow-up-right" class="w-3.5 h-3.5 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 transition-transform"></i>
-                        </a>
+                        <div class="inline-flex items-center gap-2 text-[9px] font-black uppercase tracking-widest text-primary group/link">
+                            Explore Sites <i data-lucide="arrow-up-right" class="w-3.5 h-3.5 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 transition-transform"></i>
+                        </div>
                     </div>
-            </div>
+                </a>
         </section>
 
         <section id="skills" data-aos="fade-up">
@@ -843,7 +846,7 @@
     </main>
 
     <!-- Footer -->
-    <footer class="py-12 border-t border-white/5 bg-[#08080a] relative z-10 text-center text-xs text-slate-500">
+    <footer class="py-12 border-t border-white/5 bg-black relative z-10 text-center text-xs text-slate-500">
         <div class="container mx-auto px-6 space-y-4">
             <div class="font-outfit text-xl font-black text-white tracking-tighter">
                 PAWAN <span class="text-primary">SHARMA</span>
@@ -913,7 +916,15 @@
         });
 
         // Initialize EmailJS
-        emailjs.init("jEfXg01TU_qGC60qX");
+        try {
+            if (typeof emailjs !== 'undefined') {
+                emailjs.init("jEfXg01TU_qGC60qX");
+            } else {
+                console.warn("EmailJS SDK is not loaded.");
+            }
+        } catch (err) {
+            console.error("EmailJS initialization failed:", err);
+        }
 
         // Initialize Lenis Smooth Scroll
         const lenis = new Lenis({
@@ -963,19 +974,22 @@
         });
 
         // Navbar Scroll Progress & BG Triggers
-        lenis.on('scroll', (e) => {
-            const scrolled = e.animatedScroll;
+        window.addEventListener('scroll', () => {
+            const scrolled = window.scrollY;
             const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-            const progress = (scrolled / docHeight) * 100;
+            const progress = docHeight > 0 ? (scrolled / docHeight) * 100 : 0;
             
-            document.getElementById('scroll-progress').style.width = progress + '%';
+            const progressEl = document.getElementById('scroll-progress');
+            if (progressEl) progressEl.style.width = progress + '%';
 
+            const navBg = document.getElementById('nav-bg');
+            const navbar = document.getElementById('navbar');
             if (scrolled > 50) {
-                document.getElementById('nav-bg').style.opacity = '1';
-                document.getElementById('navbar').classList.add('py-2');
+                if (navBg) navBg.style.opacity = '1';
+                if (navbar) navbar.classList.add('py-2');
             } else {
-                document.getElementById('nav-bg').style.opacity = '0';
-                document.getElementById('navbar').classList.remove('py-2');
+                if (navBg) navBg.style.opacity = '0';
+                if (navbar) navbar.classList.remove('py-2');
             }
         });
 
@@ -987,26 +1001,32 @@
             const originalText = btn.innerHTML;
             btn.innerHTML = '<span>Establishing Connection...</span>';
             btn.disabled = true;
-
+ 
             const templateParams = {
                 from_name: document.getElementById("name").value,
                 from_email: document.getElementById("email").value,
                 message: document.getElementById("message").value,
             };
-
-            emailjs.send('service_kr0m9ku', 'template_umr9j21', templateParams)
-                .then(function(response) {
-                    alert("Message sent successfully!");
-                    document.getElementById("contact-form").reset();
-                    btn.innerHTML = originalText;
-                    btn.disabled = false;
-                })
-                .catch(function(error) {
-                    console.error('FAILED...', error);
-                    alert("Failed to send message. Please try again.");
-                    btn.innerHTML = originalText;
-                    btn.disabled = false;
-                });
+ 
+            if (typeof emailjs !== 'undefined') {
+                emailjs.send('service_kr0m9ku', 'template_umr9j21', templateParams)
+                    .then(function(response) {
+                        alert("Message sent successfully!");
+                        document.getElementById("contact-form").reset();
+                        btn.innerHTML = originalText;
+                        btn.disabled = false;
+                    })
+                    .catch(function(error) {
+                        console.error('FAILED...', error);
+                        alert("Failed to send message. Please try again.");
+                        btn.innerHTML = originalText;
+                        btn.disabled = false;
+                    });
+            } else {
+                alert("Failed to send message. Email service is currently offline.");
+                btn.innerHTML = originalText;
+                btn.disabled = false;
+            }
         });
 
         // Mobile Menu Toggles
