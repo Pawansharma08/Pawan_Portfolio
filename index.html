@@ -8,7 +8,7 @@
     <!-- Firebase App & Analytics SDKs -->
     <script type="module">
       import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
-      import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-analytics.js";
+      import { getAnalytics, logEvent } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-analytics.js";
 
       // Your web app's Firebase configuration
       const firebaseConfig = {
@@ -24,6 +24,15 @@
       // Initialize Firebase
       const app = initializeApp(firebaseConfig);
       const analytics = getAnalytics(app);
+
+      // Expose logEvent globally for interaction tracking
+      window.logPortfolioEvent = (eventName, params = {}) => {
+        try {
+          logEvent(analytics, eventName, params);
+        } catch (error) {
+          console.error("Firebase logEvent error:", error);
+        }
+      };
     </script>
 
     <style>
@@ -153,7 +162,7 @@
                     </p>
 
                     <div class="flex flex-wrap gap-4 pt-2">
-                        <a href="https://drive.google.com/file/d/11hWwrEXWiIBy8cXhtO5-y19ZHaV0OpD-/view?usp=sharing" target="_blank" class="px-8 py-4 btn-primary-orange rounded-xl text-center">
+                        <a href="https://drive.google.com/file/d/11hWwrEXWiIBy8cXhtO5-y19ZHaV0OpD-/view?usp=sharing" target="_blank" class="px-8 py-4 btn-primary-orange rounded-xl text-center" onclick="if(window.logPortfolioEvent) { logPortfolioEvent('resume_download'); }">
                             DOWNLOAD CV
                         </a>
                         <a href="#projects" class="px-8 py-4 btn-outline-custom rounded-xl text-center">
@@ -444,7 +453,7 @@
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Project 1: Lexsyra -->
-                <a href="https://lexsyra.com/" target="_blank" class="glass-card rounded-[2rem] overflow-hidden border border-white/5 flex flex-col h-full hover:-translate-y-2 transition-all duration-300 shadow-lg cursor-pointer block" data-aos="zoom-in">
+                <a href="https://lexsyra.com/" target="_blank" class="glass-card rounded-[2rem] overflow-hidden border border-white/5 flex flex-col h-full hover:-translate-y-2 transition-all duration-300 shadow-lg cursor-pointer block" data-aos="zoom-in" onclick="if(window.logPortfolioEvent) { logPortfolioEvent('project_view', { name: 'lexsyra' }); }">
                     <div class="w-full aspect-[4/3] overflow-hidden relative">
                         <img src="images/lexsyra.png" alt="Lexsyra" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105">
                         <div class="absolute inset-0 bg-gradient-to-t from-zinc-950/80 to-transparent"></div>
@@ -501,7 +510,7 @@
                 </div>
 
                 <!-- Project 4: MIFTAH AI -->
-                <a href="https://miftah.ai/" target="_blank" class="glass-card rounded-[2rem] overflow-hidden border border-white/5 flex flex-col h-full hover:-translate-y-2 transition-all duration-300 shadow-lg cursor-pointer block" data-aos="zoom-in">
+                <a href="https://miftah.ai/" target="_blank" class="glass-card rounded-[2rem] overflow-hidden border border-white/5 flex flex-col h-full hover:-translate-y-2 transition-all duration-300 shadow-lg cursor-pointer block" data-aos="zoom-in" onclick="if(window.logPortfolioEvent) { logPortfolioEvent('project_view', { name: 'miftah_ai' }); }">
                     <div class="w-full aspect-[4/3] overflow-hidden relative">
                         <img src="images/miftah.png" alt="MIFTAH AI" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105">
                         <div class="absolute inset-0 bg-gradient-to-t from-zinc-950/80 to-transparent"></div>
@@ -540,7 +549,7 @@
                 </div>
 
                 <!-- Project 6: GIETU Official -->
-                <a href="https://play.google.com/store/apps/details?id=com.gietuofficialapp.gietuofficial" target="_blank" class="glass-card rounded-[2rem] overflow-hidden border border-white/5 flex flex-col h-full hover:-translate-y-2 transition-all duration-300 shadow-lg cursor-pointer block" data-aos="zoom-in" data-aos-delay="200">
+                <a href="https://play.google.com/store/apps/details?id=com.gietuofficialapp.gietuofficial" target="_blank" class="glass-card rounded-[2rem] overflow-hidden border border-white/5 flex flex-col h-full hover:-translate-y-2 transition-all duration-300 shadow-lg cursor-pointer block" data-aos="zoom-in" data-aos-delay="200" onclick="if(window.logPortfolioEvent) { logPortfolioEvent('project_view', { name: 'gietu_official' }); }">
                     <div class="w-full aspect-[4/3] overflow-hidden relative">
                         <img src="images/gietu_official.png" alt="GIETU Official" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105">
                         <div class="absolute inset-0 bg-gradient-to-t from-zinc-950/80 to-transparent"></div>
@@ -826,7 +835,7 @@
                             </div>
                             <div>
                                 <div class="text-[9px] uppercase tracking-wider text-slate-500 font-bold">Email Address</div>
-                                <a href="mailto:mschinu111@gmail.com" class="text-sm font-semibold text-white hover:text-primary">mschinu111@gmail.com</a>
+                                <a href="mailto:mschinu111@gmail.com" class="text-sm font-semibold text-white hover:text-primary" onclick="if(window.logPortfolioEvent) { logPortfolioEvent('contact_click', { type: 'email' }); }">mschinu111@gmail.com</a>
                             </div>
                         </div>
                         <div class="flex items-center gap-4">
@@ -835,7 +844,7 @@
                             </div>
                             <div>
                                 <div class="text-[9px] uppercase tracking-wider text-slate-500 font-bold">Phone Number</div>
-                                <a href="tel:+917735032955" class="text-sm font-semibold text-white hover:text-primary">+91 7735032955</a>
+                                <a href="tel:+917735032955" class="text-sm font-semibold text-white hover:text-primary" onclick="if(window.logPortfolioEvent) { logPortfolioEvent('contact_click', { type: 'phone' }); }">+91 7735032955</a>
                             </div>
                         </div>
                     </div>
@@ -1033,12 +1042,14 @@
             if (typeof emailjs !== 'undefined') {
                 emailjs.send('service_kr0m9ku', 'template_umr9j21', templateParams)
                     .then(function(response) {
+                        if (window.logPortfolioEvent) { logPortfolioEvent('contact_submit_success'); }
                         alert("Message sent successfully!");
                         document.getElementById("contact-form").reset();
                         btn.innerHTML = originalText;
                         btn.disabled = false;
                     })
                     .catch(function(error) {
+                        if (window.logPortfolioEvent) { logPortfolioEvent('contact_submit_failed'); }
                         console.error('FAILED...', error);
                         alert("Failed to send message. Please try again.");
                         btn.innerHTML = originalText;
