@@ -4,6 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pawan Kumar Sharma | Senior AI Developer & UI Architect</title>
+    
+    <!-- Firebase App & Analytics SDKs -->
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+      import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-analytics.js";
+
+      // Your web app's Firebase configuration
+      const firebaseConfig = {
+        apiKey: "AIzaSyAizeguuzlHWNUqX5J0o7aZNstMNg6-qfs",
+        authDomain: "portfolio-15a5c.firebaseapp.com",
+        projectId: "portfolio-15a5c",
+        storageBucket: "portfolio-15a5c.firebasestorage.app",
+        messagingSenderId: "895778286947",
+        appId: "1:895778286947:web:a4894b67c3eb215454f756",
+        measurementId: "G-XFB628B0FQ"
+      };
+
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const analytics = getAnalytics(app);
+    </script>
+
     <style>
         body::before {
             content: "";
